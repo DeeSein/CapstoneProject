@@ -51,7 +51,7 @@ resource "aws_subnet" "private-2" {
   }
 }
 
-### Create a security group for ssh and http
+/* ### Create a security group for ssh and http
 resource "aws_security_group" "sg_vpc" {
   name        = "sg_vpc"
   description = "Allow TLS inbound traffic"
@@ -83,7 +83,7 @@ resource "aws_security_group" "sg_vpc" {
   tags = {
     Name = "sg_vpc-DEHAM14"
   }
-}
+} */
 
 
 
