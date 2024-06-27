@@ -2,14 +2,14 @@
 resource "aws_security_group" "allow_ssh" {
   name_prefix = "allow-ssh-"
   description = "Allow SSH inbound traffic"
-  vpc_id      = aws_vpc.main.id # Replace with your VPC ID
+  vpc_id      = aws_vpc.dev_vpc.id
 
   ingress {
     description     = "Allow SSH"
     from_port       = 22
     to_port         = 22
     protocol        = "tcp"
-    cidr_blocks     = ["your_ip/32"] # Replace with your IP address
+    cidr_blocks     = ["0.0.0.0/0"] 
   }
 
   tags = {
@@ -21,7 +21,7 @@ resource "aws_security_group" "allow_ssh" {
 resource "aws_security_group" "allow_http" {
   name_prefix = "allow-http-"
   description = "Allow HTTP inbound traffic"
-  vpc_id      = aws_vpc.main.id # Replace with your VPC ID
+  vpc_id      = aws_vpc.dev_vpc.id
 
   ingress {
     description     = "Allow HTTP"
@@ -40,7 +40,7 @@ resource "aws_security_group" "allow_http" {
 resource "aws_security_group" "allow_https" {
   name_prefix = "allow-https-"
   description = "Allow HTTPS inbound traffic"
-  vpc_id      = aws_vpc.main.id # Replace with your VPC ID
+  vpc_id      = aws_vpc.dev_vpc.id
 
   ingress {
     description     = "Allow HTTPS"
@@ -59,14 +59,14 @@ resource "aws_security_group" "allow_https" {
 resource "aws_security_group" "allow_mysql" {
   name_prefix = "allow-mysql-"
   description = "Allow MySQL inbound traffic"
-  vpc_id      = aws_vpc.main.id # Replace with your VPC ID
+  vpc_id      = aws_vpc.dev_vpc.id
 
   ingress {
     description     = "Allow MySQL"
     from_port       = 3306
     to_port         = 3306
     protocol        = "tcp"
-    cidr_blocks     = ["your_ip/32"] # Replace with your IP address
+    cidr_blocks     = ["0.0.0.0/0"]
   }
 
   tags = {
